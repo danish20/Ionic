@@ -10,10 +10,10 @@ My Attempt at Learning Ionic 3
    This will install both ionic and cordova on your machine. Cordova is required for native functionalities like using GPS, Camera and Vibration etc. 
 
 + Step 2:  __Starting a new project__
-```
-run ionic start --list 
-```
-This command will list all the available templates that you can use to start your project. Some of the templates include:
+  ```
+    run ionic start --list 
+  ```
+  This command will list all the available templates that you can use to start your project. Some of the templates include:
 
   - tabs ............... ionic-angular A starting project with a simple tabbed interface
   - blank .............. ionic-angular A blank starter project
