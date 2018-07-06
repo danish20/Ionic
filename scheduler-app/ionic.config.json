@@ -1,0 +1,8 @@
+{
+  "name": "scheduler-app",
+  "app_id": "5606b705",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
