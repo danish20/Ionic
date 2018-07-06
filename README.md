@@ -26,3 +26,19 @@ My Attempt at Learning Ionic 3
   - blank .............. ionic1 A blank starter project for Ionic
   - sidemenu ........... ionic1 A starting project for Ionic using a side menu with navigation in the content area
   - maps ............... ionic1 An Ionic starter project using Google Maps and a side menu
+
++ Step 3:  __Creating New Project__
+  ```
+    run ionic start <project-name> <template> 
+  ```
+  You can create a new project like ```ionic start my-first-app tabs```. This will create a tabs app for you.
+  
+ + Step 4:  __Running App__
+   Go to your newly created folder which has your application files. 
+    ```
+    run cd my-first-app
+    ```
+   Now to run the application
+   ```run ionic serve```
+   This will run your application on local server. You can open application by going to the following address in your browser
+   `localhost:8100` or `127.0.0.1:8100`
