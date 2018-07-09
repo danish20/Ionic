@@ -59,15 +59,15 @@ My Attempt at Learning Ionic 3
 
 + __Add new page to navigation stack__
 
-  + 1. Inject Navigation Controller
-  + 2. Use Navigation Controller refrence and do ```this.navCtrl.push(NewPage);```
+  1. Inject Navigation Controller
+  2. Use Navigation Controller refrence and do ```this.navCtrl.push(NewPage);```
 
 + __Remove a page from navigation stack__
 
-  + 1. Inject Navigation Controller
-  + 2. Use Navigation Controller refrence and do ```this.navCtrl.pop();```
+  1. Inject Navigation Controller
+  2. Use Navigation Controller refrence and do ```this.navCtrl.pop();```
 
 + __Go to root of navigation stack__
 
-  + 1. Inject Navigation Controller
-  + 2. Use Navigation Controller refrence and do ```this.navCtrl.popToRoot();```
+  1. Inject Navigation Controller
+  2. Use Navigation Controller refrence and do ```this.navCtrl.popToRoot();```
