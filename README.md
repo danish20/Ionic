@@ -71,3 +71,17 @@ My Attempt at Learning Ionic 3
 
   1. Inject Navigation Controller
   2. Use Navigation Controller refrence and do ```this.navCtrl.popToRoot();```
+
++ __Add Sidebar Navigation__
+
+In app.html add the following code
+
+```html
+<ion-content>
+  <ion-list>
+    <ion-list-header>Navigate</ion-list-header>
+    <button menuClose ion-item (click)="goHome()">Home</button>
+    <button menuClose ion-item (click)="goToTournaments()">Tournaments</button>
+  </ion-list>
+</ion-content>
+```
