@@ -46,6 +46,9 @@ My Attempt at Learning Ionic 3
 ## The Navigation Stack
 
 + __Creating Pages__
+ 
   ```run ionic generate page <PageName>```
+  
   If you don't want deeplinking capabilities then use:
+  
   ```run ionic generate page <PageName> --no-module```
