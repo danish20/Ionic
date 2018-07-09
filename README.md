@@ -42,3 +42,10 @@ My Attempt at Learning Ionic 3
    ```run ionic serve```
    This will run your application on local server. You can open application by going to the following address in your browser
    `localhost:8100` or `127.0.0.1:8100`
+
+## The Navigation Stack
+
++ __Creating Pages__
+  ```run ionic generate page <PageName>```
+  If you don't want deeplinking capabilities then use:
+  ```run ionic generate page <PageName> --no-module```
