@@ -74,14 +74,19 @@ My Attempt at Learning Ionic 3
 
 + __Add Sidebar Navigation__
 
-In app.html add the following code
+  In app.html add the following code
 
-```html
-<ion-content>
-  <ion-list>
-    <ion-list-header>Navigation Header Here</ion-list-header>
-    <button menuClose ion-item (click)="goToPage1()">Page 1</button>
-    <button menuClose ion-item (click)="goToPage2()">Page 2</button>
-  </ion-list>
-</ion-content>
-```
+  ```html
+  <ion-content>
+    <ion-list>
+      <ion-list-header>Navigation Header Here</ion-list-header>
+      <button menuClose ion-item (click)="goToPage1()">Page 1</button>
+      <button menuClose ion-item (click)="goToPage2()">Page 2</button>
+    </ion-list>
+  </ion-content>
+  ```
+
++ __Adding Navigation Parameters__
+
+  1. Inject NavParams
+  2. Use Navigation Prameters refrence and do ```this.navParams.data;```
