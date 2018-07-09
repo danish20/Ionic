@@ -22,12 +22,15 @@ export class TeamHomePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.team = this.navParams.data;
-
-    
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TeamHomePage');
+  }
+
+  goHome()
+  {
+    this.navCtrl.popToRoot();
   }
 
 }
