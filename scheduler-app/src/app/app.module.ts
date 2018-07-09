@@ -12,6 +12,8 @@ import { TeamsPage } from '../pages/teams/teams';
 import { TeamDetailPage } from '../pages/team-detail/team-detail';
 import { GamePage } from '../pages/game/game';
 import { MyTeamsPage } from '../pages/my-teams/my-teams';
+import { StandingsPage } from '../pages/standings/standings';
+import { TeamHomePage } from '../pages/team-home/team-home';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { MyTeamsPage } from '../pages/my-teams/my-teams';
     TournamentsPage,
     TeamsPage,
     TeamDetailPage,
-    GamePage
+    GamePage,
+    StandingsPage,
+    TeamHomePage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,9 @@ import { MyTeamsPage } from '../pages/my-teams/my-teams';
     TournamentsPage,
     TeamsPage,
     TeamDetailPage,
-    GamePage
+    GamePage,
+    StandingsPage,
+    TeamHomePage
   ],
   providers: [
     StatusBar,
