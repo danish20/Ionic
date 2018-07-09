@@ -79,9 +79,9 @@ In app.html add the following code
 ```html
 <ion-content>
   <ion-list>
-    <ion-list-header>Navigate</ion-list-header>
-    <button menuClose ion-item (click)="goHome()">Home</button>
-    <button menuClose ion-item (click)="goToTournaments()">Tournaments</button>
+    <ion-list-header>Navigation Header Here</ion-list-header>
+    <button menuClose ion-item (click)="goToPage1()">Page 1</button>
+    <button menuClose ion-item (click)="goToPage2()">Page 2</button>
   </ion-list>
 </ion-content>
 ```
