@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import { TeamDetailPage } from '../team-detail/team-detail';
+import {LoadingController, NavController, NavParams} from 'ionic-angular';
 import { TeamHomePage } from '../team-home/team-home';
+import {EliteApiProvider} from "../../providers/elite-api/elite-api";
 
 /**
  * Generated class for the TeamsPage page.
@@ -16,19 +16,23 @@ import { TeamHomePage } from '../team-home/team-home';
 })
 export class TeamsPage {
 
-  public teams = [
-    {id:1, name:'Mumbai Indians'},
-    {id:2, name:'Kings XI Punjab'},
-    {id:3, name:'Chennai Superkings'},
-    {id:4, name:'Pune Warriors'},
-    {id:5, name:'Sunrisers Hyderabad'}
-  ];
+  public teams = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private eliteApi:EliteApiProvider, private loadingController:LoadingController) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TeamsPage');
+
+    let loader = this.loadingController.create({
+      content:'Getting Teams...'
+    });
+
+    loader.present().then(()=>{
+      this.eliteApi.getTournamentsData(this.navParams.data.id).subscribe(data => {
+        this.teams = data.teams;
+        loader.dismiss();
+      });
+    });
   }
 
   itemClicked($event,team)
