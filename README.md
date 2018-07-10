@@ -101,3 +101,23 @@ My Attempt at Learning Ionic 3
 + __Create a Service__
 
   ```run ionic generate provider <ServiceName>```
+
++ __Fetching Data using Promise__
+
+  ``` javascript
+   return new Promise(resolve => {
+      this.http.get(`${this.baseUrl}/tournaments.json`).subscribe(res=>resolve(res.json()));
+    })
+  ```
+  here ```baseUrl``` is the URL for Firebase DB. 
+
++ __Fetching Data using RxJS__
+
+  ``` javascript
+   return this.http.get(`${this.baseUrl}/tournaments-data/${TournamentId}.json`).map(response=>
+    {
+      this.currentTourney = response.json();
+      return this.currentTourney;
+    });
+  ```
+  here ```baseUrl``` is the URL for Firebase DB. 
