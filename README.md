@@ -90,3 +90,14 @@ My Attempt at Learning Ionic 3
 
   1. Inject NavParams
   2. Use Navigation Prameters refrence and do ```this.navParams.data;```
+
+
+## Setting up Backend
+
++ __Firebase__
+
+  Create a new application in firebase and import data using the JSON file.
+
++ __Create a Service__
+
+  ```run ionic generate provider <ServiceName>```
