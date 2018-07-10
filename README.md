@@ -121,3 +121,20 @@ My Attempt at Learning Ionic 3
     });
   ```
   here ```baseUrl``` is the URL for Firebase DB. 
+
++ __Display loading component__
+
+  Inject the Loading Controller and then use following code:
+
+  ``` javascript
+  ionViewDidLoad() {
+
+    let loader = this.loadingController.create({
+      content:'Getting Tournaments...'
+    });
+
+    loader.present().then(() => {
+     //Logic after load Complete Here
+    });
+  }
+  ```
