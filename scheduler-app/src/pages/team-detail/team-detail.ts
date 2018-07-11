@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {AlertController, NavController, NavParams} from 'ionic-angular';
+import {AlertController, NavController, NavParams, ToastController} from 'ionic-angular';
 import {EliteApiProvider} from "../../providers/elite-api/elite-api";
 import * as _ from 'lodash';
 import {GamePage} from "../game/game";
@@ -22,7 +22,8 @@ export class TeamDetailPage {
   public teamStanding:any={};
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              private eliteApi:EliteApiProvider, private alertController:AlertController) {}
+              private eliteApi:EliteApiProvider, private alertController:AlertController,
+              private toastController:ToastController) {}
 
   ionViewDidLoad() {
     this.team = this.navParams.data;
@@ -100,6 +101,14 @@ export class TeamDetailPage {
           text:"Yes",
           handler:()=>{
             this.isFollowing = false;
+
+            //TODO:Persist Data
+
+            this.toastController.create({
+              message:"You have successfully unfollowed this team.",
+              duration:3000,
+              position:"bottom"
+            }).present();
           }
         },
           {
