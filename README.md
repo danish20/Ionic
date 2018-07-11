@@ -165,7 +165,7 @@ To add a list with a divider to your application write the following code:
 
 Few styles of button are:
 
-```javascript
+```html
 <button ion-button>Default</button>
 <button ion-button outline>Primary Outline</button>
 <button ion-button round>Primary Round</button>
