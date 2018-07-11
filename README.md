@@ -161,7 +161,7 @@ To add a list with a divider to your application write the following code:
 </ion-content>
 ``` 
 
-+ __Buttons__
++ __Buttons and Icons__
 
 Few styles of button are:
 
@@ -172,4 +172,22 @@ Few styles of button are:
 <button ion-button icon-only>
   <ion-icon name="star"></ion-icon>
 </button>
+```
+
++ __Cards__
+
+Cards are used in various places and with new Material Design google is pushing they have become even more popular.
+
+```html
+<ion-card>
+
+  <ion-card-header>
+    Card Header
+  </ion-card-header>
+
+  <ion-card-content>
+    <!-- Add card content here! -->
+  </ion-card-content>
+
+</ion-card>
 ```
