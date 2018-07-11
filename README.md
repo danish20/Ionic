@@ -151,7 +151,7 @@ Lists are used to display rows of information, such as a contact list, playlist 
 
 To add a list with a divider to your application write the following code:
 
-```javascript
+```html
 <ion-content>
   <ion-item-group>
     <ion-item-divider color="light">Divider Text Here</ion-item-divider>
@@ -190,4 +190,71 @@ Cards are used in various places and with new Material Design google is pushing 
   </ion-card-content>
 
 </ion-card>
+```
+
++ __Grids__
+
+Ionic use grid structure similar to that of Bootstrap and under the hood it uses flexbox to acheive this.
+
+```html
+<ion-grid>
+  <ion-row>
+    <ion-col col-12>This column will take 12 columns</ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-6>This column will take 6 columns</ion-col>
+  </ion-row>
+</ion-grid>
+```
+
++ __Date Time Picker__
+
+With ionic working with date time is very easy and it provides different styles of date/time pickers depending upon the platform.
+
+```html
+<ion-item>
+  <ion-label>Start Time</ion-label>
+  <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.timeStarts"></ion-datetime>
+</ion-item>
+```
+
++ __Adding Alerts and Toasts__
+
+To add alert to your app, use the following code:
+
+```javascript
+import { AlertController } from 'ionic-angular';
+
+export class MyPage {
+
+  constructor(public alertCtrl: AlertController) { }
+
+  showAlert() {
+    const alert = this.alertCtrl.create({
+      title: 'New Friend!',
+      subTitle: 'Your friend, Obi wan Kenobi, just accepted your friend request!',
+      buttons: ['OK']
+    });
+    alert.present();
+  }
+}
+```
+
+To add toast message use following code:
+
+```javascript
+import { ToastController } from 'ionic-angular';
+
+export class MyPage {
+
+  constructor(public toastCtrl: ToastController) { }
+
+  presentToast() {
+    const toast = this.toastCtrl.create({
+      message: 'User was added successfully',
+      duration: 3000
+    });
+    toast.present();
+  }
+}
 ```
