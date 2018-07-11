@@ -138,3 +138,38 @@ My Attempt at Learning Ionic 3
     });
   }
   ```
+
+## Ionic Basic Components
+
+
+A detail list of ionic components and their use can be found on [Ionic Website](https://ionicframework.com/docs/components/). Here I have added few components used in the app.
+
+
++ __Ionic Lists and Dividers__
+
+Lists are used to display rows of information, such as a contact list, playlist or menu.
+
+To add a list with a divider to your application write the following code:
+
+```javascript
+<ion-content>
+  <ion-item-group>
+    <ion-item-divider color="light">Divider Text Here</ion-item-divider>
+    <ion-item>Item 1</ion-item>
+    <ion-item>Item 2</ion-item>
+  </ion-item-group>
+</ion-content>
+``` 
+
++ __Buttons__
+
+Few styles of button are:
+
+```javascript
+<button ion-button>Default</button>
+<button ion-button outline>Primary Outline</button>
+<button ion-button round>Primary Round</button>
+<button ion-button icon-only>
+  <ion-icon name="star"></ion-icon>
+</button>
+```
