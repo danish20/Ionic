@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import {AlertController, NavController, NavParams} from 'ionic-angular';
 import {EliteApiProvider} from "../../providers/elite-api/elite-api";
 import * as _ from 'lodash';
 import {GamePage} from "../game/game";
@@ -12,6 +12,7 @@ import moment from "moment";
 })
 export class TeamDetailPage {
 
+  public isFollowing:boolean = false;
   public useDateFilter:boolean = false;
   private allGames:any[];
   public dateTime:string;
@@ -20,7 +21,8 @@ export class TeamDetailPage {
   private tourneyData:any;
   public teamStanding:any={};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private eliteApi:EliteApiProvider) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              private eliteApi:EliteApiProvider, private alertController:AlertController) {}
 
   ionViewDidLoad() {
     this.team = this.navParams.data;
@@ -85,6 +87,34 @@ export class TeamDetailPage {
   getClassForBadge(game)
   {
     return game.scoreDisplay.indexOf('W: ')===0?'primary':'danger';
+  }
+
+  toggleFollow()
+  {
+    if(this.isFollowing)
+    {
+      let alert = this.alertController.create({
+        title:"Unfollow",
+        message:"Are you sure you want to unfollow?",
+        buttons:[{
+          text:"Yes",
+          handler:()=>{
+            this.isFollowing = false;
+          }
+        },
+          {
+            text:"No"
+          }]
+      });
+
+      alert.present();
+    }
+
+
+    else
+    {
+      this.isFollowing = true;
+    }
   }
 
 }
