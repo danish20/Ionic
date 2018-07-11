@@ -12,6 +12,7 @@ import moment from "moment";
 })
 export class TeamDetailPage {
 
+  public useDateFilter:boolean = false;
   private allGames:any[];
   public dateTime:string;
   public team:any = {};
@@ -51,7 +52,10 @@ export class TeamDetailPage {
 
   dateChanged()
   {
-    this.games = _.filter(this.allGames,g => moment(g.time).isSame(this.dateTime, 'day'));
+    if(this.useDateFilter)
+      this.games = _.filter(this.allGames,g => moment(g.time).isSame(this.dateTime, 'day'));
+    else
+      this.games = this.allGames;
   }
 
   getScoreDisplay(isTeam1,team1Score,team2Score)
@@ -71,6 +75,16 @@ export class TeamDetailPage {
   {
     let sourcegame = this.tourneyData.games.find(g=> g.id == game.gameId);
     this.navCtrl.parent.parent.push(GamePage,sourcegame);
+  }
+
+  getScoreWorL(game)
+  {
+    return game.scoreDisplay?game.scoreDisplay[0]:'';
+  }
+
+  getClassForBadge(game)
+  {
+    return game.scoreDisplay.indexOf('W: ')===0?'primary':'danger';
   }
 
 }

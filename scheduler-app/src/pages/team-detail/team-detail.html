@@ -20,7 +20,14 @@
 
       <ion-item>
         <ion-label>Date Filter:</ion-label>
-        <ion-datetime displayFormat="M/D/YYYY" pickerFormat="M/D/YYYY" [(ngModel)]="dateTime" (ionChange)="dateChanged()"></ion-datetime>
+        <ion-toggle [(ngModel)]="useDateFilter" (ionChange)="dateChanged()"></ion-toggle>
+        <ion-datetime
+          displayFormat="M/D/YYYY"
+          pickerFormat="M/D/YYYY"
+          [(ngModel)]="dateTime"
+          (ionChange)="dateChanged()"
+          [disabled]="!useDateFilter"
+        ></ion-datetime>
       </ion-item>
     </ion-card-content>
   </ion-card>
@@ -38,6 +45,7 @@
         </ion-col>
         <ion-col col-3>
           <h4>{{game.scoreDisplay}}</h4>
+          <ion-badge [color]="getClassForBadge(game)">{{getScoreWorL(game)}}</ion-badge>
         </ion-col>
       </ion-row>
     </ion-item>
