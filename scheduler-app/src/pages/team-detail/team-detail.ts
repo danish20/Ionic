@@ -4,6 +4,7 @@ import {EliteApiProvider} from "../../providers/elite-api/elite-api";
 import * as _ from 'lodash';
 import {GamePage} from "../game/game";
 import moment from "moment";
+import {UserSettingsProvider} from "../../providers/user-settings/user-settings";
 
 
 @Component({
@@ -23,7 +24,7 @@ export class TeamDetailPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private eliteApi:EliteApiProvider, private alertController:AlertController,
-              private toastController:ToastController) {}
+              private toastController:ToastController, private userSettings:UserSettingsProvider) {}
 
   ionViewDidLoad() {
     this.team = this.navParams.data;
@@ -50,6 +51,8 @@ export class TeamDetailPage {
     this.allGames = this.games;
 
     this.teamStanding = _.find(this.tourneyData.standings, {'teamId': this.team.id});
+
+    this.userSettings.isFavorite(this.team.id.toString()).then(value => this.isFollowing = value);
   }
 
 
@@ -101,6 +104,8 @@ export class TeamDetailPage {
           text:"Yes",
           handler:()=>{
             this.isFollowing = false;
+            this.userSettings.unfavoriteTeam(this.team);
+
 
             //TODO:Persist Data
 
@@ -123,6 +128,8 @@ export class TeamDetailPage {
     else
     {
       this.isFollowing = true;
+      this.userSettings.favoriteTeam(this.team, this.tourneyData.tournamentId, this.tourneyData.tournamentName);
+
     }
   }
 

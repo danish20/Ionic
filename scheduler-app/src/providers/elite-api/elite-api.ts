@@ -14,7 +14,7 @@ import "rxjs/add/operator/map";
 export class EliteApiProvider {
 
   private baseUrl = "https://elite-schedule-database-fae1d.firebaseio.com/";
-  private currentTourney:any={};
+  currentTourney:any={};
 
   constructor(public http: Http) {
   }
